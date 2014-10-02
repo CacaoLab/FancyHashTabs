@@ -1,7 +1,7 @@
 <?php namespace com\github\mitogh;
 /**
- * Plugin Name: Fancy Tabs with multiple effects
- * Plugin URI: https://github.com/CacaoLab/FancyTabs
+ * Plugin Name: Fancy Hash Tabs with multiple effects
+ * Plugin URI: https://github.com/CacaoLab/FancyHashTabs
  * Description: Allows to insert content in tabs. Use the Hash Tabs Library as base.
  * Version: 0.1
  * Author: Crisoforo Gaspar
