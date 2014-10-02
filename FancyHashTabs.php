@@ -11,6 +11,7 @@ use \com\github\cacaolab\lib as Library;
  */
 
 $plugin_directory = plugin_dir_path( __FILE__ );
+$plugin_url = plugins_url( '', __FILE__ );
 $lib_directory = './lib/';
 
 include_once $plugin_directory . $lib_directory . 'class-wordpress.php';
@@ -19,3 +20,7 @@ include_once $plugin_directory . $lib_directory . 'class-shortcode.php';
 
 $shortcode = new Library\Shortcode();
 $shortcode->register();
+
+
+$assets = new Library\Assets( $plugin_url );
+$assets->load();
