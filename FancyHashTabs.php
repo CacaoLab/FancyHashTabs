@@ -8,3 +8,9 @@
  * Author URI: http://www.crisoforo.com
  * License: GPL2
  */
+
+$plugin_directory = plugin_dir_path( __FILE__ );
+$lib_directory = './lib/';
+
+include_once $plugin_directory . $lib_directory . 'class-assets.php';
+include_once $plugin_directory . $lib_directory . 'class-shortcode.php';
