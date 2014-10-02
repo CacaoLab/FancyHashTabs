@@ -1,4 +1,5 @@
 <?php namespace com\github\cacaolab;
+use \com\github\cacaolab\lib as Library;
 /**
  * Plugin Name: Fancy Hash Tabs
  * Plugin URI: https://github.com/CacaoLab/FancyHashTabs
@@ -12,5 +13,9 @@
 $plugin_directory = plugin_dir_path( __FILE__ );
 $lib_directory = './lib/';
 
+include_once $plugin_directory . $lib_directory . 'class-wordpress.php';
 include_once $plugin_directory . $lib_directory . 'class-assets.php';
 include_once $plugin_directory . $lib_directory . 'class-shortcode.php';
+
+$shortcode = new Library\Shortcode();
+$shortcode->register();
