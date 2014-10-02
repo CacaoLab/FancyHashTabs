@@ -1,4 +1,4 @@
-<?php namespace com\github\mitogh;
+<?php namespace com\github\cacaolab;
 /**
  * Plugin Name: Fancy Hash Tabs
  * Plugin URI: https://github.com/CacaoLab/FancyHashTabs
