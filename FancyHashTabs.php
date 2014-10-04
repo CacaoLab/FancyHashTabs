@@ -19,6 +19,9 @@ include_once $plugin_directory . $lib_directory . 'class-shortcode.php';
 
 $shortcode = new Library\Shortcode();
 $shortcode->register();
+$shortcode->apply_filters();
 
 $assets = new Library\Assets( $plugin_url );
 $assets->load();
+
+

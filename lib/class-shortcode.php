@@ -5,19 +5,33 @@ class Shortcode extends Wordpress{
         return
             '<div id="Fancy-Hash-Tabs">' .
             $this->add_titles( $content ) .
+            $this->add_content( $content ) .
+            '</div>';
+    }
+
+    private function add_content( $content ) {
+        return 
+            '<div class="tab-pane-container">' .
+            do_shortcode( $content ) .
             '</div>';
     }
 
     private function add_titles( $content ){
         $titles = $this->get_titles( $content );
         $titles = $this->format_titles( $titles );
-        $html = '';
+        $html = '<nav class="tab-nav" role="tablist">';
         foreach( $titles as $title ){
-            $html .= $title;
+            $html .= 
+                '<li>' .
+                $title .
+                '</li>';
         }
+
+        $html .= '</nav>';
 
         return $html;
     }
+
 
     private function get_titles( $content ){
         $pattern = '/title=".*?"/';
@@ -56,29 +70,22 @@ class Shortcode extends Wordpress{
         return $text;
     }
 
-    public function tab_title_shortcode( $atts, $content = null ){
-        extract( 
-            shortcode_atts( array(
-                'title' => 'Tab'
-            ), $atts )
-        );
-
-        return 
-            '<li>' .
-            $title .
-            '</li>';
-    }
-
     public function tab_shortcode( $atts, $content = null ){
-        return 
-            '<div>' .
-            $content .
-            '</div>';
+        $html = '<section>';
+        $html .= $content; 
+        $html .= '</section>';
+
+        return $html;
     }
 
     public function register(){
         add_shortcode( 'hashtabs', $this->call_method('hashtabs_shortcode') );
-        add_shortcode( 'tabTitle', $this->call_method('tab_title_shortcode') );
         add_shortcode( 'tab', $this->call_method('tab_shortcode') );
+    }
+
+    public function apply_filters(){
+        remove_filter( 'the_content', 'wpautop' );
+        add_filter( 'the_content', 'wpautop' , 99);
+        add_filter( 'the_content', 'shortcode_unautop',100 );
     }
 }
