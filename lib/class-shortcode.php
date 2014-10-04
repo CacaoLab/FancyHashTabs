@@ -1,6 +1,20 @@
 <?php namespace com\github\cacaolab\lib;
 
 class Shortcode extends Wordpress{
+
+    public function register(){
+        add_shortcode( 'hashtabs', $this->call_method('hashtabs_shortcode') );
+        add_shortcode( 'tab', $this->call_method('tab_shortcode') );
+    }
+
+    public function tab_shortcode( $atts, $content = null ){
+        $html = '<section>';
+        $html .= $content; 
+        $html .= '</section>';
+
+        return $html;
+    }
+
     public function hashtabs_shortcode( $atts, $content = null){
         return
             '<div id="Fancy-Hash-Tabs">' .
@@ -70,19 +84,6 @@ class Shortcode extends Wordpress{
         $text = substr( $text, 0, $length - 1);
 
         return $text;
-    }
-
-    public function tab_shortcode( $atts, $content = null ){
-        $html = '<section>';
-        $html .= $content; 
-        $html .= '</section>';
-
-        return $html;
-    }
-
-    public function register(){
-        add_shortcode( 'hashtabs', $this->call_method('hashtabs_shortcode') );
-        add_shortcode( 'tab', $this->call_method('tab_shortcode') );
     }
 
     public function apply_filters(){
