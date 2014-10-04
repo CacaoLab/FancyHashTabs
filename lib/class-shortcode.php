@@ -32,7 +32,6 @@ class Shortcode extends Wordpress{
         return $html;
     }
 
-
     private function get_titles( $content ){
         $pattern = '/title=".*?"/';
         $results = [];
@@ -62,10 +61,13 @@ class Shortcode extends Wordpress{
     }
 
     private function delete_quotes( $text ){
+        // Remove first "
         $start = strpos('"', $text) + 1;
         $text = substr( $text, $start);
-        $lengt = strlen( $text );
-        $text = substr( $text, 0, $lengt - 1);
+        
+        // Remove last "
+        $length = strlen( $text );
+        $text = substr( $text, 0, $length - 1);
 
         return $text;
     }
