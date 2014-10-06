@@ -74,9 +74,8 @@ class Shortcode extends Wordpress{
         return $title;
     }
 
-    private function delete_quotes( $text ){
-        $text = str_replace( '"', '', $text);
-        return $text;
+    private function delete_quotes( $text = '' ){
+        return str_replace( '"', '', $text);
     }
 
     public function apply_filters(){
