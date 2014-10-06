@@ -36,9 +36,9 @@ class Shortcode extends Wordpress{
         $html = '<nav class="tab-nav" role="tablist">';
         foreach( $titles as $title ){
             $html .= 
-                '<li>' .
+                '<li><a href="#">' .
                 $title .
-                '</li>';
+                '</a></li>';
         }
 
         $html .= '</nav>';
@@ -75,14 +75,7 @@ class Shortcode extends Wordpress{
     }
 
     private function delete_quotes( $text ){
-        // Remove first "
-        $start = strpos('"', $text) + 1;
-        $text = substr( $text, $start);
-        
-        // Remove last "
-        $length = strlen( $text );
-        $text = substr( $text, 0, $length - 1);
-
+        $text = str_replace( '"', '', $text);
         return $text;
     }
 
