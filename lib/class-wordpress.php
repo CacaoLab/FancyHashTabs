@@ -1,4 +1,4 @@
-<?php namespace com\github\cacaolab\lib;
+<?php namespace com\github\mitogh\FancyHashTabs\lib;
 
 class Wordpress {
     public function __construct(){

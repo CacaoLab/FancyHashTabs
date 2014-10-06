@@ -1,4 +1,4 @@
-<?php namespace com\github\cacaolab\lib;
+<?php namespace com\github\mitogh\FancyHashTabs\lib;
 
 class Assets extends Wordpress {
 
@@ -26,9 +26,23 @@ class Assets extends Wordpress {
 
     public function load(){
         add_action('init', $this->call_method( 'enqueue_scripts' ) );
+        add_action('wp_footer', $this->call_method( 'enqueue_hash_script' ) );
     }
-    
+
     public function enqueue_scripts(){
         wp_enqueue_script('jquery-hash-tabs');
+    }
+
+    public function enqueue_hash_script(){
+?>
+<script type="text/js">
+        jQuery(document).ready(function() {
+            var $tabs = $("#Fancy-Hash-Tabs").hashTabs({
+            debug: true,
+            keyboard: true
+        });
+});
+</script>
+<?php 
     }
 }

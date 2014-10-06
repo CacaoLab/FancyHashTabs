@@ -1,5 +1,5 @@
-<?php namespace com\github\cacaolab;
-use \com\github\cacaolab\lib as Library;
+<?php namespace com\github\mitogh\FancyHashTabs;
+use \com\github\mitogh\FancyHashTabs\lib as Library;
 /**
  * Plugin Name: Fancy Hash Tabs
  * Plugin URI: https://github.com/CacaoLab/FancyHashTabs
