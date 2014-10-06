@@ -2,7 +2,13 @@
 
 class Shortcode extends Wordpress{
 
-    public function register(){
+    public function __construct(){
+        parent::__construct();
+
+        $this->register();
+    }
+
+    private function register(){
         add_shortcode( 'hashtabs', $this->call_method('hashtabs_shortcode') );
         add_shortcode( 'tab', $this->call_method('tab_shortcode') );
     }
@@ -78,9 +84,4 @@ class Shortcode extends Wordpress{
         return str_replace( '"', '', $text);
     }
 
-    public function apply_filters(){
-        remove_filter( 'the_content', 'wpautop' );
-        add_filter( 'the_content', 'wpautop' , 99);
-        add_filter( 'the_content', 'shortcode_unautop',100 );
-    }
 }
