@@ -9,13 +9,14 @@ class Shortcode extends Wordpress{
     }
 
     private function register(){
-        add_shortcode( 'hashtabs', $this->call_method('hashtabs_shortcode') );
+        add_shortcode( 'easytabs', $this->call_method('easytabs_shortcode') );
+        add_shortcode( 'EasyTabs', $this->call_method('easytabs_shortcode') );
+        add_shortcode( 'easyTabs', $this->call_method('easytabs_shortcode') );
+        add_shortcode( 'Easytabs', $this->call_method('easytabs_shortcode') );
         add_shortcode( 'tab', $this->call_method('tab_shortcode') );
     }
 
-
-    public function hashtabs_shortcode( $atts, $content = null){
-
+    public function easytabs_shortcode( $atts, $content = null){
         return
             '<div id="tab-container" class="tab-container">' .
             $this->add_titles( $content ) .
