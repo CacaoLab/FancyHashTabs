@@ -13,7 +13,9 @@ class Assets extends Wordpress {
     }
 
     private function register(){
-        wp_register_script('jquery-hash-tabs', $this->get_path_from_JS_asset( 'jquery.hash-tabs.min.js' ), array('jquery'), null, true );
+        wp_register_script('jquery-ba-hash-change', $this->get_path_from_JS_asset( 'jquery.ba-hashchange.min.js' ), array('jquery'), null, false );
+        wp_register_script('jquery-easy-tabs', $this->get_path_from_JS_asset( 'jquery.easytabs.min.js' ), array('jquery'), null, false );
+        wp_register_style('easy-tabs-styles', $this->assets_path . '/css/example.css', array(), null, null);
     }
 
     private function get_path_from_JS_asset( $file_name ){
@@ -30,18 +32,17 @@ class Assets extends Wordpress {
     }
 
     public function enqueue_scripts(){
-        wp_enqueue_script('jquery-hash-tabs');
+        wp_enqueue_script('jquery-ba-hash-change');
+        wp_enqueue_script('jquery-easy-tabs');
+        wp_enqueue_style('easy-tabs-styles');
     }
 
     public function enqueue_hash_script(){
 ?>
-<script type="text/js">
-        jQuery(document).ready(function() {
-            var $tabs = $("#Fancy-Hash-Tabs").hashTabs({
-            debug: true,
-            keyboard: true
-        });
-});
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery('#tab-container').easytabs();
+    });
 </script>
 <?php 
     }
