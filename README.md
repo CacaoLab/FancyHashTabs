@@ -42,6 +42,8 @@ Quisque eu massa vel leo placerat facilisis vitae lacinia lectus.
 
 This code generates an HTML markup and add the necesary JS and CSS (optional) to create the tabs, and a result like this (if you use the default CSS)
 
+![ScreenShot](https://raw.githubusercontent.com/mitogh/WP-EasyTabs/master/assets/example.png)
+
 ## Credits ##
 
 The original [Library in JS](https://github.com/JangoSteve/jQuery-EasyTabs) was written by [JangoSteve](https://github.com/JangoSteve)
