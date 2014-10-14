@@ -13,43 +13,52 @@ class Shortcode extends Wordpress{
         add_shortcode( 'tab', $this->call_method('tab_shortcode') );
     }
 
-    public function tab_shortcode( $atts, $content = null ){
-        $html = '<section>';
-        $html .= $content; 
-        $html .= '</section>';
-
-        return $html;
-    }
 
     public function hashtabs_shortcode( $atts, $content = null){
+
         return
-            '<div id="Fancy-Hash-Tabs">' .
+            '<div id="tab-container" class="tab-container">' .
             $this->add_titles( $content ) .
             $this->add_content( $content ) .
             '</div>';
     }
 
     private function add_content( $content ) {
-        return 
-            '<div class="tab-pane-container">' .
-            do_shortcode( $content ) .
-            '</div>';
+        return do_shortcode( $content );
+    }
+
+    public function tab_shortcode( $atts, $content = null ){
+        $options = shortcode_atts( array(
+            'title' => 'Default title',
+        ), $atts);
+
+        $html = '<div id="'. $this->generate_ID( $options['title'] ) .'">';
+        $html .= $content; 
+        $html .= '</div>';
+        return $html;
     }
 
     private function add_titles( $content ){
         $titles = $this->get_titles( $content );
         $titles = $this->format_titles( $titles );
-        $html = '<nav class="tab-nav" role="tablist">';
+        $html = '<ul class="etabs">';
+
         foreach( $titles as $title ){
             $html .= 
-                '<li><a href="#">' .
+                '<li class="tab"><a href="#'. $this->generate_ID($title) .'">' .
                 $title .
                 '</a></li>';
         }
 
-        $html .= '</nav>';
+        $html .= '</ul>';
 
         return $html;
+    }
+
+    private function generate_ID( $name ){
+        $name = trim($name);
+        $name = strtolower($name);
+        return str_replace(" ", "-", $name);
     }
 
     private function get_titles( $content ){
