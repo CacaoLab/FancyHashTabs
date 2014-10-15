@@ -13,7 +13,18 @@ class AdminPage extends Wordpress{
     }
 
     public function plugin_admin_add_page() {
-        add_options_page('WP Easy Tabs - Options', 'Easy Tabs', 'manage_options', 'wp-easy-tabs', $this->call_method('plugin_options_page') );
+        $options = array(
+            'page_title' => 'WP Easy Tabs - Options',
+            'menu_title' => 'Easy Tabs',
+            'capability' => 'manage_options',
+            'slug' => 'wp-easy-tabs',
+        );
+
+        add_options_page( $options['page_title'], $options['menu_title'], $options['capability'], $options['slug'], $this->load_function() );
+    }
+
+    private function load_function(){
+        return $this->call_method( 'plugin_options_page');
     }
 
     public function plugin_options_page() {
