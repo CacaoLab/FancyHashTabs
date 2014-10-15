@@ -1,4 +1,4 @@
-<?php namespace com\github\mitogh\EasyTabs\lib;
+<?php namespace EasyTabs\lib;
 class HTML{
 
     public static function generate_tag( $tag = '', $content = '', $attributes = array() ){

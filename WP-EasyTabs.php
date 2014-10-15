@@ -1,5 +1,5 @@
-<?php namespace com\github\mitogh\EasyTabs;
-use \com\github\mitogh\EasyTabs\lib as Library;
+<?php namespace EasyTabs;
+use EasyTabs\lib as Library;
 /**
  * Plugin Name: WP Easy Tabs
  * Plugin URI: https://github.com/mitogh/WP-EasyTabs

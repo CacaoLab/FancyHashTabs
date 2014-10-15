@@ -1,4 +1,4 @@
-<?php namespace com\github\mitogh\EasyTabs\lib;
+<?php namespace EasyTabs\lib;
 
 class Wordpress {
     public function __construct(){

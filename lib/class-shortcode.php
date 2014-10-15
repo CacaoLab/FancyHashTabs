@@ -1,4 +1,4 @@
-<?php namespace com\github\mitogh\EasyTabs\lib;
+<?php namespace EasyTabs\lib;
 
 class Shortcode extends Wordpress{
 
