@@ -1,6 +1,10 @@
 <?php namespace com\github\mitogh\EasyTabs\lib;
 class HTML{
 
+    public static function ul( $list, $attributes = array() ){
+        return '<ul' . HTML::attributes( $attributes ) . '>' .  $list . '</ul>';
+    }
+
     public static function div( $content, $attributes = array() ){
         return '<div' . HTML::attributes( $attributes ) . '>' .  $content . '</div>';
     }

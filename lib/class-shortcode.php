@@ -46,18 +46,19 @@ class Shortcode extends Wordpress{
     private function add_titles( $content ){
         $titles = $this->get_titles( $content );
         $titles = $this->format_titles( $titles );
-        $html = '<ul class="etabs">';
+        $attributes = array(
+            'class' => 'etabs'
+        );
+        $list = '';
 
         foreach( $titles as $title ){
-            $html .= 
+            $list .= 
                 '<li class="tab"><a href="#'. HTML::generate_ID($title) .'">' .
                 $title .
                 '</a></li>';
         }
 
-        $html .= '</ul>';
-
-        return $html;
+        return HTML::ul( $list, $attributes );
     }
 
     private function get_titles( $content ){
