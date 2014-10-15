@@ -1,8 +1,16 @@
 <?php namespace com\github\mitogh\EasyTabs\lib;
 class HTML{
 
+    public static function a( $inner_text, $attributes = array() ){
+        return '<a' . HTML::attributes( $attributes ) . '>' . $inner_text . '</a>';
+    }
+
     public static function ul( $list, $attributes = array() ){
         return '<ul' . HTML::attributes( $attributes ) . '>' .  $list . '</ul>';
+    }
+
+    public static function li( $content, $attributes = array() ){
+        return '<li ' . HTML::attributes( $attributes ) . '>' . $content . '</li>';
     }
 
     public static function div( $content, $attributes = array() ){

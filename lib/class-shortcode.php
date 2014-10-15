@@ -54,11 +54,17 @@ class Shortcode extends Wordpress{
 
     private function generate_list( $titles = array() ){
         $list = '';
+        
         foreach( $titles as $title ){
-            $list .= 
-                '<li class="tab"><a href="#'. HTML::generate_ID($title) .'">' .
-                $title .
-                '</a></li>';
+            $link_options = array(
+                'href' => '#' . HTML::generate_ID( $title )
+            );
+            $link = HTML::a( $title, $link_options);
+
+            $list_options = array(
+                'class' => 'tab'
+            );
+            $list .= HTML::li( $link, $list_options);
         }
         return $list;
     }
