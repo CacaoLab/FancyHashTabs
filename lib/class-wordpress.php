@@ -2,17 +2,17 @@
 
 class Wordpress {
     public function __construct(){
-        $this->apply_filters();
+        $this->disable_format_content();
     }
 
     /**
      * Filters to avoid HTML tags like: <p>, <br> when output the
      * shortcode
      */
-    private function apply_filters(){
+    private function disable_format_content(){
         remove_filter( 'the_content', 'wpautop' );
         add_filter( 'the_content', 'wpautop' , 99);
-        add_filter( 'the_content', 'shortcode_unautop',100 );
+        add_filter( 'the_content', 'shortcode_unautop', 100 );
     }
 
     /**
