@@ -29,10 +29,10 @@ class AdminPage extends Wordpress{
 
     public function plugin_options_page() {
         echo HTML::generate_tag('h2', 'Easy Tabs');
-        $this->theme_front_page_settings();
+        $this->load_admin_template();
     }
 
-    private function theme_front_page_settings() {
+    private function load_admin_template() {
         include_once $this->template_path;
     }
 }
