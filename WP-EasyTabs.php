@@ -23,4 +23,6 @@ $shortcode = new Library\Shortcode();
 $assets = new Library\Assets( $plugin_url );
 $assets->load();
 
-$admin_page = new Library\AdminPage();
+$template_admin_path = $plugin_directory . $lib_directory . 'admin-template.php';
+
+$admin_page = new Library\AdminPage( $template_admin_path );
