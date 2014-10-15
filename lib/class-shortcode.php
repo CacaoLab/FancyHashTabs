@@ -17,11 +17,14 @@ class Shortcode extends Wordpress{
     }
 
     public function easytabs_shortcode( $atts, $content = null){
-        return
-            '<div id="tab-container" class="tab-container">' .
-            $this->add_titles( $content ) .
-            $this->add_content( $content ) .
-            '</div>';
+        $html_content = $this->add_titles( $content );
+        $html_content .= $this->add_content( $content );
+
+        $options = array(
+            'id' => 'tab-container',
+            'class' => 'tab-container'
+        );
+        return HTML::div( $html_content, $options );
     }
 
     private function add_content( $content ) {
