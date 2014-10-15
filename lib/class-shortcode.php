@@ -19,12 +19,12 @@ class Shortcode extends Wordpress{
     public function easytabs_shortcode( $atts, $content = null){
         $html_content = $this->add_titles( $content );
         $html_content .= $this->add_content( $content );
-
-        $options = array(
+        $attributes = array(
             'id' => 'tab-container',
             'class' => 'tab-container'
         );
-        return HTML::div( $html_content, $options );
+
+        return HTML::div( $html_content, $attributes );
     }
 
     private function add_content( $content ) {
@@ -36,10 +36,11 @@ class Shortcode extends Wordpress{
             'title' => 'Default title',
         ), $atts);
 
-        $html = '<div id="'. HTML::generate_ID( $options['title'] ) .'">';
-        $html .= $content; 
-        $html .= '</div>';
-        return $html;
+        $attributes = array(
+            'id' => HTML::generate_ID( $options['title'] )
+        );
+
+        return HTML::div( $content, $attributes);
     }
 
     private function add_titles( $content ){
