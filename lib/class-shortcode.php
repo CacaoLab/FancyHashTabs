@@ -49,10 +49,10 @@ class Shortcode extends Wordpress{
         $attributes = array(
             'class' => 'etabs'
         );
-        return HTML::generate_tag('ul', $this->generate_list($titles), $attributes );
+        return HTML::generate_tag('ul', $this->generate_tab_titles($titles), $attributes );
     }
 
-    private function generate_list( $titles = array() ){
+    private function generate_tab_titles( $titles = array() ){
         $list = '';
         
         foreach( $titles as $title ){
