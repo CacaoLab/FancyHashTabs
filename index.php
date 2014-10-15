@@ -21,3 +21,13 @@ include_once $plugin_directory . $lib_directory . 'class-shortcode.php';
 $shortcode = new Library\Shortcode();
 $assets = new Library\Assets( $plugin_url );
 $assets->load();
+
+add_action('admin_menu', __NAMESPACE__ . '\plugin_admin_add_page');
+
+function plugin_admin_add_page() {
+    add_options_page('WP Easy Tabs - Options', 'Easy Tabs', 'manage_options', 'wp-easy-tabs', __NAMESPACE__ . '\plugin_options_page');
+}
+
+function plugin_options_page() {
+    echo "<h2>Easy Tabs</h2>";
+}
