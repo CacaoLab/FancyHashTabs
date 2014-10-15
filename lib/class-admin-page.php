@@ -6,11 +6,11 @@ class AdminPage extends Wordpress{
     }
 
     public function plugin_admin_add_page() {
-        add_options_page('WP Easy Tabs - Options', 'Easy Tabs', 'manage_options', 'wp-easy-tabs', __NAMESPACE__ . '\plugin_options_page');
+        add_options_page('WP Easy Tabs - Options', 'Easy Tabs', 'manage_options', 'wp-easy-tabs', $this->call_method('plugin_options_page') );
     }
 
-    private function plugin_options_page() {
-        echo "<h2>Easy Tabs</h2>";
+    public function plugin_options_page() {
+        echo HTML::generate_tag('h2', 'Easy Tabs');
         $this->theme_front_page_settings();
     }
 
