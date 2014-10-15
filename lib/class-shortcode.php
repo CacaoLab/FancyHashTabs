@@ -63,12 +63,9 @@ class Shortcode extends Wordpress{
     }
 
     private function get_titles( $content ){
-        $pattern = '/title=".*?"/';
-        $results = [];
-
-        preg_match_all( $pattern , $content, $results );
-
-        return $results[0];
+        $start = 'title="';
+        $end = '"';
+        return HTML::get_inside_of($start, $end, $content);
     }
 
     private function format_titles( $titles = array() ){
