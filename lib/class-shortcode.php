@@ -84,14 +84,9 @@ class Shortcode extends Wordpress{
         $title = "";
 
         if ( preg_match( $pattern, $text, $result ) ){
-            $title = $this->delete_quotes( $result[0] );
+            $title = HTML::delete_quotes( $result[0] );
         }
 
         return $title;
     }
-
-    private function delete_quotes( $text = '' ){
-        return str_replace( '"', '', $text);
-    }
-
 }

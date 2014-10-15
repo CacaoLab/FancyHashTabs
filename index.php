@@ -15,6 +15,7 @@ $lib_directory = './lib/';
 
 include_once $plugin_directory . $lib_directory . 'class-wordpress.php';
 include_once $plugin_directory . $lib_directory . 'class-assets.php';
+include_once $plugin_directory . $lib_directory . 'class-html.php';
 include_once $plugin_directory . $lib_directory . 'class-shortcode.php';
 
 $shortcode = new Library\Shortcode();
