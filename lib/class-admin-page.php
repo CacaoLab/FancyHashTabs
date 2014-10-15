@@ -5,6 +5,10 @@ class AdminPage extends Wordpress{
 
     public function __construct( $template_path = '' ){
         $this->template_path = $template_path;
+        $this->register_actions();
+    }
+
+    private function register_actions(){
         add_action('admin_menu', $this->call_method('plugin_admin_add_page') );
     }
 
