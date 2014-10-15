@@ -33,7 +33,7 @@ class Shortcode extends Wordpress{
             'title' => 'Default title',
         ), $atts);
 
-        $html = '<div id="'. $this->generate_ID( $options['title'] ) .'">';
+        $html = '<div id="'. HTML::generate_ID( $options['title'] ) .'">';
         $html .= $content; 
         $html .= '</div>';
         return $html;
@@ -46,7 +46,7 @@ class Shortcode extends Wordpress{
 
         foreach( $titles as $title ){
             $html .= 
-                '<li class="tab"><a href="#'. $this->generate_ID($title) .'">' .
+                '<li class="tab"><a href="#'. HTML::generate_ID($title) .'">' .
                 $title .
                 '</a></li>';
         }
@@ -54,12 +54,6 @@ class Shortcode extends Wordpress{
         $html .= '</ul>';
 
         return $html;
-    }
-
-    private function generate_ID( $name ){
-        $name = trim($name);
-        $name = strtolower($name);
-        return str_replace(" ", "-", $name);
     }
 
     private function get_titles( $content ){

@@ -9,6 +9,12 @@ class HTML{
         return $results[0];
     }
 
+    public static function generate_ID( $name = '' ){
+        $name = trim($name);
+        $name = strtolower($name);
+        return str_replace(" ", "-", $name);
+    }
+
     public static function delete_quotes( $content = ''){
         $double_quotes = '"';
         $empty_string = '';
