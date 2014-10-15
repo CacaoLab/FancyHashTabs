@@ -1,9 +1,9 @@
-<?php namespace com\github\mitogh\FancyHashTabs;
-use \com\github\mitogh\FancyHashTabs\lib as Library;
+<?php namespace com\github\mitogh\EasyTabs;
+use \com\github\mitogh\EasyTabs\lib as Library;
 /**
- * Plugin Name: Fancy Hash Tabs
- * Plugin URI: https://github.com/CacaoLab/FancyHashTabs
- * Description: Allows to insert content in tabs. Use the Hash Tabs Library as base.
+ * Plugin Name: WP Easy Tabs
+ * Plugin URI: https://github.com/mitogh/WP-EasyTabs
+ * Description: Allows to insert content in tabs. Use the Easy Tabs Library as base.
  * Version: 0.1
  * Author: Crisoforo Gaspar
  * Author URI: http://www.crisoforo.com

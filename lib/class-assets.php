@@ -1,4 +1,4 @@
-<?php namespace com\github\mitogh\FancyHashTabs\lib;
+<?php namespace com\github\mitogh\EasyTabs\lib;
 
 class Assets extends Wordpress {
 
