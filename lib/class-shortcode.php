@@ -24,7 +24,7 @@ class Shortcode extends Wordpress{
             'class' => 'tab-container'
         );
 
-        return HTML::div( $html_content, $attributes );
+        return HTML::generate_tag('div',  $html_content, $attributes );
     }
 
     private function add_content( $content ) {
@@ -40,7 +40,7 @@ class Shortcode extends Wordpress{
             'id' => HTML::generate_ID( $options['title'] )
         );
 
-        return HTML::div( $content, $attributes);
+        return HTML::generate_tag('div', $content, $attributes);
     }
 
     private function add_titles( $content ){
@@ -49,7 +49,7 @@ class Shortcode extends Wordpress{
         $attributes = array(
             'class' => 'etabs'
         );
-        return HTML::ul( $this->generate_list($titles), $attributes );
+        return HTML::generate_tag('ul', $this->generate_list($titles), $attributes );
     }
 
     private function generate_list( $titles = array() ){
@@ -59,12 +59,12 @@ class Shortcode extends Wordpress{
             $link_options = array(
                 'href' => '#' . HTML::generate_ID( $title )
             );
-            $link = HTML::a( $title, $link_options);
+            $link = HTML::generate_tag('a', $title, $link_options);
 
             $list_options = array(
                 'class' => 'tab'
             );
-            $list .= HTML::li( $link, $list_options);
+            $list .= HTML::generate_tag('li', $link, $list_options);
         }
         return $list;
     }
