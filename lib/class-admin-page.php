@@ -34,14 +34,13 @@ class AdminPage extends Wordpress{
 
     public function sanitize( $input ){
         $result;
-        if( is_null($input) || empty($input) ){
+        if( is_null($input) || empty($input) || strtolower($input) === 'off' ){
             $result = 'off';
         }else if( strtolower($input) === 'on'){
             $result = 'on';
         }
         return $result;
     }
-
 
     private function load_function(){
         return $this->call_method( 'plugin_options_page');
