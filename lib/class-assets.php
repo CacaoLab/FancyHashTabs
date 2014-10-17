@@ -41,16 +41,19 @@ class Assets extends Wordpress {
     public function enqueue_scripts(){
         wp_enqueue_script('jquery-ba-hash-change');
         wp_enqueue_script('jquery-easy-tabs');
-        wp_enqueue_style('easy-tabs-styles');
+        $data = get_option('easytabs_disable_css'); 
+        if( $data === 'off'){
+            wp_enqueue_style('easy-tabs-styles');
+        }
     }
 
     public function enqueue_hash_script(){
 ?>
-<script type="text/javascript">
-    jQuery(document).ready(function(){
-        jQuery('#tab-container').easytabs();
+        <script type="text/javascript">
+        jQuery(document).ready(function(){
+            jQuery('#tab-container').easytabs();
     });
-</script>
+    </script>
 <?php 
     }
 }
