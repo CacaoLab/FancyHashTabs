@@ -52,7 +52,7 @@ class Assets extends Wordpress {
         <script type="text/javascript">
         jQuery(document).ready(function(){
             jQuery('#tab-container').easytabs();
-    });
+        });
     </script>
 <?php 
     }

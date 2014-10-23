@@ -2,10 +2,17 @@
 
 class Shortcode extends Wordpress{
 
-    public function __construct(){
-        parent::__construct();
+    private $assets;
 
+    public function __construct( $assets = null ){
+        parent::__construct();
+        $this->assets = $assets;
+        $this->load_assets();
         $this->register();
+    }
+
+    private function load_assets(){
+        $this->assets->load();
     }
 
     private function register(){

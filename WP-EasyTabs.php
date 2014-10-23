@@ -19,9 +19,8 @@ include_once $plugin_directory . $lib_directory . 'class-assets.php';
 include_once $plugin_directory . $lib_directory . 'class-shortcode.php';
 include_once $plugin_directory . $lib_directory . 'class-admin-page.php';
 
-$shortcode = new Library\Shortcode();
 $assets = new Library\Assets( $plugin_url );
-$assets->load();
+$shortcode = new Library\Shortcode( $assets );
 
 $template_admin_path = $plugin_directory . $lib_directory . 'admin-template.php';
 
