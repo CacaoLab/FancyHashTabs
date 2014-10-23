@@ -3,7 +3,7 @@
     colors="true">
     <testsuites>
         <testsuite name="WP EasyTabs Test Suite">
-            <directory suffix=".php">./Test</directory>
+            <directory suffix=".php">./tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>
