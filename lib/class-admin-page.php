@@ -33,15 +33,21 @@ class AdminPage extends Wordpress{
     }
 
     public function sanitize( $input ){
-        $result;
-        if( is_null($input) || empty($input) || strtolower($input) === 'off' ){
-            $result = 'off';
-        }else if( strtolower($input) === 'on'){
-            $result = 'on';
-        }
-        return $result;
+        return $this->is_enabled( $input );
     }
 
+    private function is_disabled( $input ){
+        return is_null($input) || empty($input) || strtolower($input) === 'off';
+    }
+
+    private function is_enabled( $input = ''){
+        if( ! $this->is_disabled( $input ) && strtolower($input) === 'on' ){
+            return 'on';
+        }else{
+            return 'off';
+        }
+    }
+    
     private function load_function(){
         return $this->call_method( 'plugin_options_page');
     }

@@ -1,5 +1,6 @@
 <?php 
-$data = get_option('easytabs_disable_css'); 
+use \EasyTabs\lib as Library;
+$field = get_option('easytabs_disable_css'); 
 ?>
     <div class="wrap">
         <h2>Usage</h2>
@@ -28,17 +29,17 @@ And for add more tabs inside of the same wrapper you only need to create a new s
                 <tr valign="top">
                     <th scope="row">
                         <label for="easytabs_disable_css">
-                            Disable loading default CSS
+                            Disable default CSS for tabs
                         </label> 
                     </th>
                     <td>
-                    <input type="checkbox" id="easytabs_disable_css" name="easytabs_disable_css" size="25" <?php if(strtolower($data) === 'on') { echo 'checked'; } ?>/>
+                    <input type="checkbox" id="easytabs_disable_css" name="easytabs_disable_css" size="25" <?php if(Library\HTML::is_enabled( $field ) ){ Library\HTML::checked(); } ?>>
                     </td>
                 </tr>
             </table>
             <?php submit_button(); ?>
         </form>
-<?php if(strtolower( $data ) === 'on' ): ?>
+<?php if ( Library\HTML::is_enabled( $field) ): ?>
         <h4>Make sure to add the next CSS classes to your custom theme (if you disable to load the default CSS)</h4>
         <textarea rows="25" cols="70">
 .etabs { 

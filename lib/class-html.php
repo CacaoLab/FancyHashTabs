@@ -23,11 +23,19 @@ class HTML{
     }
 
     public function attribute_element($key, $value){
-        if (is_numeric($key)) $key = $value;
+        if ( is_numeric($key) ) $key = $value;
 
         if ( ! is_null($value) ){
             return $key . '="' . $value .'"';
         }
+    }
+
+    public static function is_enabled( $field = '' ){
+        return (strtolower( $field ) === 'on');
+    }
+
+    public static function checked(){
+        echo 'checked';
     }
 
     public static function get_inside_of($start = '', $end = '', $from = ''){
