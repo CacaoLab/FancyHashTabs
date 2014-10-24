@@ -2,16 +2,15 @@
 use EasyTabs\lib\HTML;
 
 class HTMLTest extends \PHPUnit_Framework_TestCase{
-
     /**
      * @dataProvider inputIsEnabled
      */
-    public function testIsEnabled( $on_input, $off_input ){
-        $condition_result = HTML::is_enabled( $on_input );
+    public function testIsEnabled($on_input, $off_input){
+        $condition_result = HTML::is_enabled($on_input);
         $this->assertTrue( $condition_result );
         
-        $condition_result = HTML::is_enabled( $off_input );
-        $this->assertFalse( $condition_result );
+        $condition_result = HTML::is_enabled($off_input);
+        $this->assertFalse($condition_result);
     }
 
     public function inputIsEnabled(){
@@ -22,20 +21,19 @@ class HTMLTest extends \PHPUnit_Framework_TestCase{
             array('ON', 'OFf')
         );
     }
-
     
     public function testChecked(){
         $expected = 'checked';
-        $this->expectOutputString( $expected );
+        $this->expectOutputString($expected);
         echo HTML::checked();
     }
 
     /**
      * @dataProvider inputGenerateID
      */
-    public function testGenerateID( $input, $expected ){
+    public function testGenerateID($input, $expected){
         $actual = HTML::generate_ID($input);
-        $this->assertEquals( $expected, $actual );
+        $this->assertEquals($expected, $actual);
     }
 
     public function inputGenerateID(){
@@ -48,12 +46,13 @@ class HTMLTest extends \PHPUnit_Framework_TestCase{
             array('', '')
         );
     }
+
     /**
      * @dataProvider inputDeleteQuotes
      */
-    public function testDeleteQuotes( $input, $expected ){
+    public function testDeleteQuotes($input, $expected){
         $actual = HTML::delete_quotes($input);
-        $this->assertEquals( $expected, $actual );
+        $this->assertEquals($expected, $actual);
     }
 
     public function inputDeleteQuotes(){

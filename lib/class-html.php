@@ -38,6 +38,13 @@ class HTML{
         echo 'checked';
     }
 
+    /**
+     * Returns the text "Content [start end] end of my sentence"
+     * [start end] from a sentence, returns an array with all the
+     * results. 
+     *
+     * @return array
+     */
     public static function get_inside_of($start = '', $end = '', $from = ''){
         $pattern = '/'. $start . '.*?'. $end . '/i';
         $results = array();
