@@ -40,7 +40,7 @@ class HTML{
 
     public static function get_inside_of($start = '', $end = '', $from = ''){
         $pattern = '/'. $start . '.*?'. $end . '/i';
-        $results = [];
+        $results = array();
 
         preg_match_all( $pattern , $from, $results );
 
