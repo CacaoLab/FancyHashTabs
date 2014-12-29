@@ -44,7 +44,7 @@ class Shortcode extends Wordpress{
             'id' => HTML::generate_ID( $options['title'] )
         );
 
-        return HTML::generate_tag('div', $content, $attributes);
+        return HTML::generate_tag('div', do_shortcode( $content ) , $attributes);
     }
 
     private function add_titles( $content ){
