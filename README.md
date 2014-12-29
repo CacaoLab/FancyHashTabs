@@ -12,30 +12,30 @@ To create a section with tabs you only need to use the following shortcode in th
 ```
 [EasyTabs]
 
-[tab title="Tab 1"]
+[tb title="Tab 1"]
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 Aliquam sit amet purus blandit libero pulvinar interdum.
 Class aptent taciti sociosqu ad litora torquent per conubia nostra.
-[/tab]
+[/tb]
 
-[tab title="Tab 2"]
+[tb title="Tab 2"]
 Per inceptos himenaeos. Morbi porta felis condimentum dapibus congue.
 
 Donec finibus, magna sit amet pulvinar dapibus, sem dui blandit dolor, non ultricies quam orci quis nisi. Vestibulum vitae ex turpis.
 
 Pellentesque quis lorem in dolor aliquet ultrices imperdiet ac ligula.
 Quisque eu massa vel leo placerat facilisis vitae lacinia lectus.
-[/tab]
+[/tb]
 
-[tab title="Tab 3"]
+[tb title="Tab 3"]
 Per inceptos himenaeos. Morbi porta felis condimentum dapibus congue.
 
 Donec finibus, magna sit amet pulvinar dapibus, sem dui blandit dolor, non ultricies quam orci quis nisi. Vestibulum vitae ex turpis.
 
 Pellentesque quis lorem in dolor aliquet ultrices imperdiet ac ligula.
 Quisque eu massa vel leo placerat facilisis vitae lacinia lectus.
-[/tab]
+[/tb]
 
 [/EasyTabs]
 ```
