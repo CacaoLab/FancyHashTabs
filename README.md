@@ -1,5 +1,5 @@
 # EasyTabs [![Build Status](https://travis-ci.org/mitogh/WP-EasyTabs.png)](https://travis-ci.org/mitogh/WP-EasyTabs)
-### Wordpress Plugin for generate content with Tabs
+> Wordpress Plugin for generate content with Tabs
 
 ## Content
 - [Usage](#uage)
