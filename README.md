@@ -12,6 +12,8 @@ To create a section with tabs you only need to use the following shortcode in th
 ## Features
 - Use of shortcodes or any content inside of the tabs.
 
+## Usage
+
 ```
 [EasyTabs]
 
