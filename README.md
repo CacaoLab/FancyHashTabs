@@ -1,13 +1,16 @@
-# EasyTabs [![Build Status](https://travis-ci.org/mitogh/WP-EasyTabs.png)](https://travis-ci.org/mitogh/WP-EasyTabs) #
-### Wordpress Plugin for generate content with Tabs ###
+# EasyTabs [![Build Status](https://travis-ci.org/mitogh/WP-EasyTabs.png)](https://travis-ci.org/mitogh/WP-EasyTabs)
+### Wordpress Plugin for generate content with Tabs
 
-## Content ##
+## Content
 - [Usage](#uage)
 - [Credits](#credits)
 
-## Usage ##
+## Usage
 
 To create a section with tabs you only need to use the following shortcode in the editor area of each post or page.
+
+## Features
+- Use of shortcodes or any content inside of the tabs.
 
 ```
 [EasyTabs]
@@ -44,6 +47,6 @@ This code generates an HTML markup and add the necesary JS and CSS (optional) to
 
 ![ScreenShot](https://raw.githubusercontent.com/mitogh/WP-EasyTabs/master/assets/example.png)
 
-## Credits ##
+## Credits
 
 The original [Library in JS](https://github.com/JangoSteve/jQuery-EasyTabs) was written by [JangoSteve](https://github.com/JangoSteve)
